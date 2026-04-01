@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songs</title>
+    <title>Song Details</title>
 </head>
 <body>
 
     <main>
-        <h1>Best songs of the year</h1>
-        <p>
-            <span th:each="song : ${songs}">[[${song}]], </span>
-        </p>
+        <h1 th:text="|${song.title} details|"></h1>
+        <ul>
+            <li>ID: [[${song.id}]]</li>
+            <li>Title: [[${song.title}]]</li>
+        </ul>
     </main>
     
 </body>

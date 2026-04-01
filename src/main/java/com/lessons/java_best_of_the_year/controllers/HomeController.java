@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.lessons.java_best_of_the_year.Movie;
 import com.lessons.java_best_of_the_year.Song;
@@ -40,6 +41,21 @@ public class HomeController {
     public String getSongs(Model model) {
         model.addAttribute("songs", getBestSongs());
         return "songsPage";
+    }
+
+    @GetMapping("/movies/{id}")
+    public String getMovie(@PathVariable int id, Model model) {
+        Movie movie = getBestMovies().get(id);
+        model.addAttribute("movie", movie);
+
+        return "movieDetails";
+    }
+
+    @GetMapping("/songs/{id}")
+    public String getSong(@PathVariable int id, Model model) {
+        model.addAttribute("song", getBestSongs().get(id));
+
+        return "songDetails";
     }
 
 }

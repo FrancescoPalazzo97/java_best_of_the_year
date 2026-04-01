@@ -11,6 +11,21 @@ public class Song {
         this.title = title;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId() {
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public void setTitle(String newTitle) {
+        this.title = newTitle;
+    }
+
     @Override
     public String toString() {
         return this.title;
