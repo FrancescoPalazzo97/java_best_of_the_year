@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head-fragment(titlePage)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.8/css/bootstrap.min.css}">
+    <title>[[${titlePage}]]</title>
+</head>
+<body>
+
+    <main>
+
+        <h1 th:fragment="H1(text)" class="text-center">[[${text}]]</h1>
+
+        <div th:fragment="card(el)" class="card-body">
+            <h3>Title: [[${el}]]</h3>
+        </div>
+
+    </main>
+
+    <script th:src="@{/webjars/bootstrap/5.3.8/js/bootstrap.min.js}"></script>
+    
+</body>
+</html>

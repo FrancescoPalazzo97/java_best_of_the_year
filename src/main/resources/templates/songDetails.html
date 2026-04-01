@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Song Details</title>
-</head>
+
+
+<head th:replace="~{fragments :: head-fragment('Song Details')}"></head>
+
+
 <body>
 
     <main>
-        <h1 th:text="|${song.title} details|"></h1>
+        <h1 th:replace="~{fragments :: H1(|${song.title} details|)}"></h1>
         <ul>
             <li>ID: [[${song.id}]]</li>
             <li>Title: [[${song.title}]]</li>

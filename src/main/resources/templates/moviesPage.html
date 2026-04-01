@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
-</head>
+
+<head th:replace="~{fragments :: head-fragment('Movies')}"></head>
+
 <body>
 
     <main>
-        <h1>Best movies of the year</h1>
-        <p>
-            <span th:each="movie : ${movies}">[[${movie}]], </span>
-        </p>
+        <h1 th:replace="~{fragments :: H1('Best movies of the year')}"></h1>
+        <ul>
+            <li th:each="movie : ${movies}" class="card">
+                <div th:replace="~{fragments :: card(${movie})}"></div>
+            </li>
+        </ul>
     </main>
     
 </body>

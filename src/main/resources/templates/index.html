@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-</head>
+
+<head th:replace="~{fragments :: head-fragment('Welcome')}"></head>
+
 <body>
 
     <main>
-        <h1>Best of the year by [[${name}]]</h1>
+        <h1 th:replace="~{fragments :: H1(|Best of the year by ${name}|)}"></h1>
     </main>
+
+    <script th:src="@{/webjars/bootstrap/5.3.8/js/bootstrap.min.js}"></script>
     
 </body>
 </html>
