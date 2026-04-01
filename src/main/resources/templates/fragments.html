@@ -12,8 +12,10 @@
 
         <h1 th:fragment="H1(text)" class="text-center">[[${text}]]</h1>
 
-        <div th:fragment="card(el)" class="card-body">
-            <h3>Title: [[${el}]]</h3>
+        <div th:fragment="card(link, el)" class="card-body">
+            <a th:href="@{|${link}/${el.id}|}">
+                <h3>Title: [[${el}]]</h3>
+            </a>
         </div>
 
     </main>

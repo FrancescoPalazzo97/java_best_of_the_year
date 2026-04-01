@@ -9,7 +9,7 @@
         <h1 th:replace="~{fragments :: H1('Best movies of the year')}"></h1>
         <ul>
             <li th:each="movie : ${movies}" class="card">
-                <div th:replace="~{fragments :: card(${movie})}"></div>
+                <div th:replace="~{fragments :: card('/movies', ${movie})}"></div>
             </li>
         </ul>
     </main>

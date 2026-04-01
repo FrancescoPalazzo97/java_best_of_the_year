@@ -7,7 +7,7 @@ public class Movie {
     private static int counter = 0;
 
     public Movie(String title) {
-        this.id = ++counter;
+        this.id = counter++;
         this.title = title;
     }
 

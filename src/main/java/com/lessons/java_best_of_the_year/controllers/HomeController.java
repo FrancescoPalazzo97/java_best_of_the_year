@@ -13,14 +13,9 @@ import com.lessons.java_best_of_the_year.Song;
 
 @Controller
 public class HomeController {
-
-    private List<Movie> getBestMovies() {
-        return List.of(new Movie("Il signore degli anelli"), new Movie("Batman"), new Movie("Dune"));
-    }
-
-    private List<Song> getBestSongs() {
-        return List.of(new Song("Aerials"), new Song("Bleed it Out"), new Song("Broken"));
-    }
+    private static List<Movie> bestMovies = List.of(new Movie("Il signore degli anelli"), new Movie("Batman"),
+            new Movie("Dune"));
+    private static List<Song> bestSongs = List.of(new Song("Aerials"), new Song("Bleed it Out"), new Song("Broken"));
 
     @GetMapping("/")
     public String welcome(Model model) {
@@ -33,19 +28,19 @@ public class HomeController {
 
     @GetMapping("/movies")
     public String getMovies(Model model) {
-        model.addAttribute("movies", getBestMovies());
+        model.addAttribute("movies", bestMovies);
         return "moviesPage";
     }
 
     @GetMapping("/songs")
     public String getSongs(Model model) {
-        model.addAttribute("songs", getBestSongs());
+        model.addAttribute("songs", bestSongs);
         return "songsPage";
     }
 
     @GetMapping("/movies/{id}")
     public String getMovie(@PathVariable int id, Model model) {
-        Movie movie = getBestMovies().get(id);
+        Movie movie = bestMovies.get(id);
         model.addAttribute("movie", movie);
 
         return "movieDetails";
@@ -53,7 +48,7 @@ public class HomeController {
 
     @GetMapping("/songs/{id}")
     public String getSong(@PathVariable int id, Model model) {
-        model.addAttribute("song", getBestSongs().get(id));
+        model.addAttribute("song", bestSongs.get(id - 1));
 
         return "songDetails";
     }
