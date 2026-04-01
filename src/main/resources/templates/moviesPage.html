@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+
+    <main>
+        <h1>Best movies of the year</h1>
+        <p>
+            <span th:each="movie : ${movies}">[[${movie}]], </span>
+        </p>
+    </main>
+    
+</body>
+</html>
