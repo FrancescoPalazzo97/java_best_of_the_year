@@ -1,6 +1,5 @@
 package com.lessons.java_best_of_the_year.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
